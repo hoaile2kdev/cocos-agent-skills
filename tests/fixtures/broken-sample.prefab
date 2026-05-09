@@ -1,0 +1,39 @@
+[
+  {
+    "__type__": "cc.Prefab",
+    "_name": "",
+    "data": { "__id__": 1 }
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "BrokenRoot",
+    "_parent": null,
+    "_children": [{ "__id__": 99 }],
+    "_active": true,
+    "_components": [{ "__id__": 3 }],
+    "_prefab": null,
+    "_id": ""
+  },
+  {
+    "_name": "MissingType",
+    "_objFlags": 0,
+    "node": { "__id__": 1 },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "_enabled": true,
+    "_string": "No node ref",
+    "_id": "dup1"
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": { "__id__": 1 },
+    "_enabled": true,
+    "_id": "dup1"
+  }
+]

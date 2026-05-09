@@ -1,0 +1,45 @@
+agent_manifest_version: 1
+skill:
+  name: "cocos-creator-2415"
+  title: "Cocos Creator 2.4.15"
+  version: "1.3.0"
+  engine_version: "2.4.15"
+  last_verified: "2026-05-09"
+  entrypoint: "../SKILL.md"
+  purpose: "Implement, review, debug, or author Cocos Creator 2.4.x/2.4.15 TypeScript code, scenes, prefabs, components, and serialized Cocos assets."
+load_order:
+  - "../SKILL.md"
+conditional_references:
+  - path: "../references/api-and-ts-rules.md"
+    when: "Writing or reviewing TypeScript, Cocos API usage, decorators, properties, logging, scheduling, or version-specific API choices."
+  - path: "../references/component-decorator-lifecycle.md"
+    when: "Working with cc.Component lifecycle, decorators, editor properties, or component initialization."
+  - path: "../references/scene-binding-rules.md"
+    when: "Working with required/optional Editor bindings, node/component references, prefab wiring, or fail-loud behavior."
+  - path: "../references/scene-prefab-authoring.md"
+    when: "Creating or editing .prefab/.fire files without the Cocos Editor, including node names, UUIDs, component references, and custom script components."
+  - path: "../references/engine-source-map.md"
+    when: "Inspecting the local Cocos Creator 2.4.15 engine source or matching runtime behavior to engine internals."
+  - path: "../references/node-event-transform-action.md"
+    when: "Working with cc.Node hierarchy, events, transforms, actions, tweens, or coordinate rules."
+  - path: "../references/asset-manager-2-4.md"
+    when: "Loading assets, resources, bundles, prefabs, textures, or remote assets with cc.assetManager."
+  - path: "../references/spine-runtime.md"
+    when: "Working with sp.Skeleton, Spine animation state, listeners, skins, tracks, or slots."
+  - path: "../references/ui-components.md"
+    when: "Working with common UI/render components such as cc.Sprite, cc.Canvas, cc.Camera, cc.Widget, cc.Layout, cc.Button, cc.ScrollView, cc.PageView, cc.Slider, cc.Scrollbar, cc.EditBox, cc.Toggle, cc.ProgressBar, cc.WebView, cc.NodePool, UI layout, or pooling."
+  - path: "../references/audio-scene-platform.md"
+    when: "Working with cc.audioEngine, cc.director, cc.game, cc.sys, scene management, audio playback, platform detection, localStorage, or networking."
+  - path: "../references/graphics-mask.md"
+    when: "Working with cc.Graphics for drawing shapes or win lines, cc.Mask for clipping or stencil effects, or vector rendering."
+  - path: "../references/animation-particles.md"
+    when: "Working with cc.Animation, cc.AnimationClip, cc.ParticleSystem, cc.BlockInputEvents, cc.RichText, frame animations, particle effects, or input blocking."
+scripts:
+  - path: "../scripts/cocos_serialization_tools.js"
+    when: "Use for deterministic no-Editor prefab/scene work: validate .prefab/.fire files, generate UUIDs, inspect asset meta, and resolve custom script class IDs from library/imports."
+runtime_rules:
+  avoid_newer_cocos_apis: true
+  prefer_editor_properties_for_static_ui_bindings: true
+  do_not_instantiate_components_with_new: true
+  no_network_without_user_approval: true
+  no_package_install_without_user_approval: true
