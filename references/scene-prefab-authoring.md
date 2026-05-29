@@ -17,6 +17,8 @@ Use this when Codex must create or edit Cocos Creator 2.4.x `.prefab`, `.fire`, 
 
 Prefer copying the closest existing prefab/scene shape and changing node names, serialized properties, and asset references. Hand-building from scratch is acceptable for small, simple trees, but must follow the serialized format exactly.
 
+When authoring UI/prefabs from a visual reference, first read `prefab-ui-workflow.md` for hierarchy planning, asset mapping, binding checklist, and apply-mode rules.
+
 Use the helper script:
 
 ```bash
@@ -224,6 +226,10 @@ Read the class and nearby existing serialized instances before creating a custom
 ## Safety rules
 
 - Do not invent custom script class ids from names.
+- Do not fabricate asset UUIDs. Discover real UUIDs from `.meta` files, existing serialized references, or Cocos built-in asset metadata.
+- Preserve existing `.meta` UUIDs. Generate new UUIDs only for genuinely new files/assets that require them.
+- Do not leave required sprite frames, fonts, materials, prefab references, or component bindings null unless the existing local pattern intentionally does so or the user explicitly asks for placeholders.
+- For labels, use system font only when it matches the requested or existing style; otherwise bind a real font asset UUID.
 - Do not edit `.prefab`/`.fire` with string replacement unless the change is a simple scalar value.
 - Keep `.meta` files with moved assets; new assets need new UUIDs.
 - Use full UUIDs in `.meta` and external `__uuid__` references.

@@ -4,19 +4,9 @@ Verified engine source
 
 This reference was built by inspecting a local Cocos Creator 2.4.15 engine source folder.
 
-Common Cocos Creator app path:
+Engine source paths are installation-specific. On first use in a new machine/workspace, ask the user to provide or confirm the active Cocos Creator 2.4.15 installation path before inspecting engine source or built-in default assets. Then inspect that installation's engine folder, commonly `Contents/Resources/engine` on packaged desktop installs. Do not assume macOS, Windows, Linux, or external-drive paths from another project.
 
-```text
-~/Applications/Cocos/Creator/2.4.15/CocosCreator.app
-```
-
-Common engine source path:
-
-```text
-~/Applications/Cocos/Creator/2.4.15/CocosCreator.app/Contents/Resources/engine
-```
-
-When engine inspection is needed, ask for or locate that machine's own Cocos Creator 2.4.15 `Contents/Resources/engine` folder before inspecting engine source.
+If the user does not know the install path, offer to locate it with filesystem search using their approval when the search would scan outside the current workspace.
 
 Do not edit engine source while working on a Cocos project. Use it as a verification source when an API is uncertain.
 

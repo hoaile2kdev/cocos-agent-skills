@@ -12,7 +12,7 @@ Verified engine sources:
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export class MyComponentComp extends cc.Component {
+export class MyComponent extends cc.Component {
     @property(cc.Label) label: cc.Label = null;
     @property text: string = 'hello';
 
@@ -31,6 +31,8 @@ export class MyComponentComp extends cc.Component {
 ```
 
 The `= null` editor-binding pattern matches common Cocos Creator 2.x project settings. If a host project enables `strictNullChecks`, use the project's nullable-binding convention and preserve fail-loud access for required editor wiring.
+
+Class names, suffixes such as `Comp`, file layout, and named/default export style are host-project conventions. Match nearby project code and project instructions rather than treating this example as a naming rule.
 
 ## Do / Don't
 
@@ -52,7 +54,7 @@ The `= null` editor-binding pattern matches common Cocos Creator 2.x project set
 
 ## TypeScript rules
 
-- Follow the host project's export style (`export default class` or `export class`). Match whichever convention the project already uses.
+- Follow the host project's naming and export style (`export default class` or `export class`). Match whichever convention the project already uses.
 - Avoid implicit `any`; prefer existing project interfaces/types.
 - Always use `{}` for control flow.
 - Before changing a public interface or shared type, find all call sites with `rg`.

@@ -40,6 +40,16 @@ Do not use `node.getChildByName()` to find static UI in a hierarchy when it can 
 
 The engine provides `getChildByName(name)` in `_BaseNode`, but it is a linear lookup over direct children and returns `null` when no name matches. For fixed UI/prefabs, `@property` is more stable and exposes wiring errors more clearly.
 
+## Static UI authoring
+
+For static UI, panels, popups, HUD controls, buttons, toggles, labels, and reusable visual groups, create or update the hierarchy in `.prefab` / `.fire` files and expose required nodes/components through `@property`.
+
+Do not build fixed UI in gameplay code with `new cc.Node()` plus `addComponent(cc.Sprite)`, `addComponent(cc.Label)`, `addComponent(cc.Button)`, or `addComponent(cc.Toggle)`. That hides Editor wiring, makes asset UUIDs implicit, and makes prefab review harder.
+
+Runtime creation is acceptable for genuinely dynamic objects such as object pools, temporary particles/effects, generated list items, or data-driven debug overlays. In those cases, state why runtime creation is intentional and use verified assets/components rather than null or fabricated references.
+
+When a user asks to create a UI/prefab from a screenshot or mockup, read `prefab-ui-workflow.md` before editing serialized files.
+
 ## Cocos meta
 
 When moving scripts/assets in a Cocos project, keep the `.meta` file with the asset to avoid changing UUIDs and breaking prefab/scene references.

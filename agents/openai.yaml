@@ -1,7 +1,7 @@
 interface:
   display_name: "Cocos Creator 2.4.15"
-  short_description: "Engine rules for Cocos Creator 2.4.15"
-  default_prompt: "Use $cocos-creator-2415 to implement or review Cocos Creator 2.4.15 TypeScript code."
+  short_description: "Engine and prefab rules for Cocos Creator 2.4.15"
+  default_prompt: "Use $cocos-creator-2415 to implement, review, or author Cocos Creator 2.4.15 TypeScript, UI, scenes, and prefabs. On first use, confirm the local Cocos Creator 2.4.15 install path if engine source or built-in default assets are needed."
 
 load_order:
   - path: "../SKILL.md"
@@ -30,6 +30,8 @@ reference_quick_index:
     load: "references/animation-particles.md"
   - task: "Editor bindings, prefab wiring, singletons"
     load: "references/scene-binding-rules.md"
+  - task: "Create UI/prefab from screenshot, mockup, or visual reference"
+    load: "references/prefab-ui-workflow.md"
   - task: "No-Editor .prefab/.fire authoring"
     load: "references/scene-prefab-authoring.md"
   - task: "Engine source inspection"
@@ -37,7 +39,9 @@ reference_quick_index:
 
 operating_notes:
   - "Read SKILL.md first, then load only the relevant references based on the task at hand."
+  - "On first use in a new machine/workspace, confirm the local Cocos Creator 2.4.15 path before engine-source inspection or built-in default asset binding."
   - "Use scripts/cocos_serialization_tools.js for deterministic no-Editor .prefab/.fire work. Do not hand-approximate class IDs or UUIDs."
+  - "For screenshot/mockup-to-prefab work, load prefab-ui-workflow.md before serialized authoring."
   - "Run node tests/run-tests.js after modifying the serialization tools or fixtures."
   - "When a wrong API pattern is found across multiple files (e.g. cc.v3 instead of cc.v2), use grep/search to fix all occurrences systematically."
   - "Do not use Cocos 3.x APIs. When uncertain about an API, check engine-source-map.md."

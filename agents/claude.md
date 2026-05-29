@@ -23,6 +23,7 @@ Use this adapter when Claude or Claude Code is given the `cocos-creator-2415` sk
 | Graphics drawing, win lines, masks | `graphics-mask.md` |
 | Frame animation, particles, input blocking, rich text | `animation-particles.md` |
 | Editor bindings, prefab wiring, singletons | `scene-binding-rules.md` |
+| Create UI/prefab from screenshot, mockup, or visual reference | `prefab-ui-workflow.md` |
 | No-Editor `.prefab`/`.fire` authoring | `scene-prefab-authoring.md` |
 | Engine source inspection | `engine-source-map.md` |
 
@@ -30,6 +31,7 @@ Use this adapter when Claude or Claude Code is given the `cocos-creator-2415` sk
 
 - Map Claude tools to the local equivalents: `Read` for file reads, `Grep` for search, shell for validation commands, and edit tools for patches.
 - For no-Editor `.prefab` or `.fire` authoring, load `references/scene-prefab-authoring.md` and run the helper script to validate the result.
+- For screenshot/mockup-to-prefab work, load `references/prefab-ui-workflow.md` before serialized authoring.
 - Run `node tests/run-tests.js` after modifying the serialization tools or fixtures to verify nothing is broken.
 - Keep project-specific workflow rules outside this engine skill; follow them only when a project explicitly provides them.
 - Do not use Cocos 3.x APIs. When uncertain about an API, check `engine-source-map.md` for the fallback verification strategy.

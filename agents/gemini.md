@@ -23,12 +23,14 @@ Use this adapter when Gemini, Gemini CLI, or a Gemini-based agent is given the `
 | Graphics drawing, win lines, masks | `graphics-mask.md` |
 | Frame animation, particles, input blocking, rich text | `animation-particles.md` |
 | Editor bindings, prefab wiring, singletons | `scene-binding-rules.md` |
+| Create UI/prefab from screenshot, mockup, or visual reference | `prefab-ui-workflow.md` |
 | No-Editor `.prefab`/`.fire` authoring | `scene-prefab-authoring.md` |
 | Engine source inspection | `engine-source-map.md` |
 
 ## Gemini Operating Notes
 
 - Treat `SKILL.md` as the primary instruction file and `agents/agent.yaml` as the machine-readable routing map.
+- For screenshot/mockup-to-prefab work, load `references/prefab-ui-workflow.md` before serialized authoring.
 - Prefer precise file search and small file ranges over loading an entire project.
 - Do not use Cocos APIs newer than 2.4.x. When uncertain, use the fallback strategy in `engine-source-map.md`.
 - Run `node tests/run-tests.js` after modifying the serialization tools or fixtures to verify nothing is broken.

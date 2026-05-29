@@ -6,7 +6,7 @@ skill:
   engine_version: "2.4.15"
   last_verified: "2026-05-09"
   entrypoint: "../SKILL.md"
-  purpose: "Implement, review, debug, or author Cocos Creator 2.4.x/2.4.15 TypeScript code, scenes, prefabs, components, and serialized Cocos assets."
+  purpose: "Implement, review, debug, or author Cocos Creator 2.4.x/2.4.15 TypeScript code, scenes, UI, prefabs, components, screenshot/mockup-to-prefab layouts, and serialized Cocos assets."
 load_order:
   - "../SKILL.md"
 conditional_references:
@@ -16,6 +16,8 @@ conditional_references:
     when: "Working with cc.Component lifecycle, decorators, editor properties, or component initialization."
   - path: "../references/scene-binding-rules.md"
     when: "Working with required/optional Editor bindings, node/component references, prefab wiring, or fail-loud behavior."
+  - path: "../references/prefab-ui-workflow.md"
+    when: "Creating or editing Cocos UI/prefabs from a screenshot, mockup, visual reference, layout description, or static UI request."
   - path: "../references/scene-prefab-authoring.md"
     when: "Creating or editing .prefab/.fire files without the Cocos Editor, including node names, UUIDs, component references, and custom script components."
   - path: "../references/engine-source-map.md"
@@ -38,8 +40,12 @@ scripts:
   - path: "../scripts/cocos_serialization_tools.js"
     when: "Use for deterministic no-Editor prefab/scene work: validate .prefab/.fire files, generate UUIDs, inspect asset meta, and resolve custom script class IDs from library/imports."
 runtime_rules:
+  confirm_local_cocos_2415_path_on_first_use: true
+  require_local_cocos_path_for_engine_source_or_builtin_assets: true
   avoid_newer_cocos_apis: true
   prefer_editor_properties_for_static_ui_bindings: true
+  prefer_prefab_scene_authoring_for_static_ui: true
+  do_not_runtime_create_static_ui: true
   do_not_instantiate_components_with_new: true
   no_network_without_user_approval: true
   no_package_install_without_user_approval: true
